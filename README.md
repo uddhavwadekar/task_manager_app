@@ -1,16 +1,21 @@
-# task_manager
+# Task Manager Pro 🚀
 
-A new Flutter project.
+A premium Flutter application featuring a real-time Kanban board, Firebase authentication, and REST API integration. Built as part of a professional development assignment.
 
-## Getting Started
+## 📋 Project Requirements Met
+- **User Authentication:** Sign up/Login with Firebase (Persistence enabled).
+- **Kanban Dashboard:** Tasks categorized by "To Do", "In Progress", and "Done".
+- **REST API:** Motivational quotes fetched from the Quotable API.
+- **Full CRUD:** Create, Read, Update (Status & Details), and Delete tasks.
+- **Modern UI:** Responsive design using Material 3 and custom widgets.
 
-This project is a starting point for a Flutter application.
+## 📁 Folder Structure
+- `lib/models`: Task data models.
+- `lib/screens`: Main UI screens (Login, Home, Task Form, Profile).
+- `lib/services`: Logic for Firebase Auth, Firestore, and REST API.
+- `lib/widgets`: Reusable UI components like `TaskItem`.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠️ How to Run
+1. Clone the repo: `git clone https://github.com/uddhavwadekar/task_manager_app.git`
+2. Install dependencies: `flutter pub get`
+3. Connect a device and run: `flutter run`
