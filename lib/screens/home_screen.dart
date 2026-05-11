@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_manager/models/task_model.dart';
+import 'package:task_manager/screens/profile_screen.dart';
 import 'package:task_manager/services/api_service.dart';
 import 'package:task_manager/services/auth_service.dart';
 import 'package:task_manager/services/firestore_service.dart';
@@ -57,13 +58,28 @@ class _HomeScreenState extends State<HomeScreen> {
             'My Board', 
             style: TextStyle(fontWeight: FontWeight.bold, letterSpacing: 0.5)
           ),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.logout_rounded),
-              tooltip: 'Sign Out',
-              onPressed: () => _authService.signOut(),
-            )
-          ],
+         // Update this specific section in your AppBar actions
+actions: [
+  IconButton(
+    icon: const Icon(Icons.person_outline),
+    tooltip: 'Profile',
+    onPressed: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const ProfileScreen()),
+      );
+    },
+  ),
+  IconButton(
+    icon: const Icon(Icons.logout_rounded),
+    tooltip: 'Sign Out',
+    onPressed: () async {
+      await _authService.signOut();
+      // This forces the app to restart at the initial route (Login)
+      Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
+    },
+  )
+],
           bottom: TabBar(
             labelColor: theme.primaryColor,
             unselectedLabelColor: Colors.grey[500],

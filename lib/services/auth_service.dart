@@ -27,10 +27,15 @@ class AuthService {
     }
   }
 
-  Future<void> signOut() async {
-    await _auth.signOut();
+  // Inside your AuthService class
+Future<void> signOut() async {
+  try {
+    await _auth.signOut(); 
+    print("User successfully signed out");
+  } catch (e) {
+    print("Error signing out: $e");
   }
-
+}
   Stream<User?> get userStatus => _auth.authStateChanges();
 
   String _handleAuthError(String errorCode) {
